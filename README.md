@@ -1,5 +1,4 @@
 # craftarmaiolo - Update by Ziomaruo
-Script per raccogliere i vari materiali e craftare le armi. Abilitato solo per lavoro "ammu" (modificabile)
 
 ### LICENZA
 Script completamente FREE, si prega di non venderlo.
