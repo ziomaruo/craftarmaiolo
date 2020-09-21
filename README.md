@@ -1,4 +1,4 @@
-# craftarmaiolo - Update by Ziomaruo
+# craftarmaiolo - Modified by Ziomaruo 
 
 ### LICENZA
 Script completamente FREE, si prega di non venderlo.
