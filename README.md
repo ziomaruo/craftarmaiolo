@@ -8,4 +8,4 @@ Script completamente FREE, si prega di non venderlo.
 * Eseguire il file SQL per importare gli items.
 
 ### IMPORTANT
-Risorsa creata per ESX. Per info scrivere a ziomaruo@gmail.com
+Risorsa creata per ESX.
