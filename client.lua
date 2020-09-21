@@ -82,16 +82,7 @@ if Config.Keyboard.useKeyboard then
 	end)
 end
 
-
---if Config.Shop.useShop then
-
-	--if PlayerData.job ~= nil and PlayerData.job.name == 'ammu' then
-	--local inDrawingRange = false
-	--local function isPlayerInRange(coords1, coords2, range)	
-	--	return (Vdist2(coords1.x, coords1.y, coords1.z, coords2.x, coords2.y, coords2.z) < range)
---end
-	
-			
+		
 Citizen.CreateThread(function()
 	
 	while true do
