@@ -26,31 +26,31 @@ Config.WeaponAmmoPistole = 120
 Config.Recipes = {
 	
 	["weapon_musket"] = { 
-        {item = "acciaio", quantity = 20 }, --ACCIAIO--
-        {item = "radica", quantity = 15 }, --RADICA DI NOCE--
-        {item = "ergal", quantity = 10 }, --ERGAL--
-        {item = "minuteria", quantity = 20 }, --MINUTERIA--
+        {item = "acciaio", quantity = 20 }, 
+        {item = "radica", quantity = 20 }, 
+        {item = "ergal", quantity = 20 }, 
+        {item = "minuteria", quantity = 20 },
     },
 	
 	["weapon_pistol"] = { 
-        {item = "acciaio", quantity = 15 }, --ACCIAIO--
-        {item = "polimero", quantity = 10 }, --POLIMERO--
-        {item = "ergal", quantity = 8 }, --ERGAL--
-        {item = "minuteria", quantity = 10 }, --MINUTERIA--
+        {item = "acciaio", quantity = 20 }, 
+        {item = "polimero", quantity = 20 }, 
+        {item = "ergal", quantity = 20 },
+        {item = "minuteria", quantity = 20 }, 
     },
 	
 	["weapon_combatpistol"] = { 
-        {item = "acciaio", quantity = 15 }, --ACCIAIO--
-        {item = "polimero", quantity = 15 }, --POLIMERO--
-        {item = "ergal", quantity = 10 }, --ERGAL--
-        {item = "minuteria", quantity = 15 }, --MINUTERIA--
+        {item = "acciaio", quantity = 20 },
+        {item = "polimero", quantity = 20 }, 
+        {item = "ergal", quantity = 20 },
+        {item = "minuteria", quantity = 20 },
     },
 	
 	["weapon_snspistol_mk2"] = { 
-        {item = "acciaio", quantity = 10 }, --ACCIAIO--
-        {item = "polimero", quantity = 15 }, --POLIMERO--
-        {item = "radica", quantity = 10 }, --RADICA DI NOCE--
-        {item = "minuteria", quantity = 10 }, --MINUTERIA--
+        {item = "acciaio", quantity = 20 },
+        {item = "polimero", quantity = 20 }, 
+        {item = "radica", quantity = 20 },
+        {item = "minuteria", quantity = 20 }, 
     },
 }
 
