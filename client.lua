@@ -9,16 +9,20 @@ local acciaioQTE	= 0
 local ergalQTE 		= 0
 local radicaQTE 	= 0
 local minuteriaQTE 	= 0
-	
+local showblip = false	
 
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
+	
+	while ESX.GetPlayerData().job == nil do
+        Citizen.Wait(10)
+    end
 
-	Citizen.Wait(5000)
 	PlayerData = ESX.GetPlayerData()
+	showblip = true
 end)
 
 
@@ -82,29 +86,6 @@ if Config.Keyboard.useKeyboard then
 	end)
 end
 
-		
-Citizen.CreateThread(function()
-	
-	while true do
-
-		Citizen.Wait(0)
-		if PlayerData.job ~= nil and PlayerData.job.name == 'ammu' then
-	
-		for i=1, #Config.Shop.shopCoordinates, 1 do
-			local blip = AddBlipForCoord(Config.Shop.shopCoordinates[i].x, Config.Shop.shopCoordinates[i].y, Config.Shop.shopCoordinates[i].z)
-				SetBlipSprite (blip, Config.Shop.shopBlipID)
-				SetBlipDisplay(blip, 4)
-				SetBlipScale  (blip, 1.0)
-				SetBlipAsShortRange(blip, true)
-				BeginTextCommandSetBlipName("STRING")
-				AddTextComponentString(Config.Shop.shopName)
-				EndTextCommandSetBlipName(blip)
-			end
-		end
-	end
-	
-end)
-
 -- Display markers
 Citizen.CreateThread(function()
 	while true do
@@ -127,31 +108,51 @@ Citizen.CreateThread(function()
 					end
 				end
 			end
+
 		end
+
 	end
 end)
 
-
+--[[
+Citizen.CreateThread(function()
+	
+	Citizen.Wait(0)
+	
+	for i=1, #Config.Shop.shopCoordinates, 1 do
+		local blip = AddBlipForCoord(Config.Shop.shopCoordinates[i].x, Config.Shop.shopCoordinates[i].y, Config.Shop.shopCoordinates[i].z)
+			SetBlipSprite (blip, Config.Shop.shopBlipID)
+			SetBlipDisplay(blip, 4)
+			SetBlipScale  (blip, 1.0)
+			SetBlipAsShortRange(blip, true)
+			BeginTextCommandSetBlipName("STRING")
+			AddTextComponentString(Config.Shop.shopName)
+			EndTextCommandSetBlipName(blip)
+	end
+		
+end)
+--]]
 -----------PRENDERE MATERIALI
 
 Citizen.CreateThread(function()
 	
-	while true do
-
-		Citizen.Wait(0)
-		if PlayerData.job ~= nil and PlayerData.job.name == 'ammu' then
+	while not showblip do
+        Citizen.Wait(10)
+    end
 	
+    if PlayerData.job.name == 'ammu' then
 		for k,v in pairs(Config.Zones) do
-			local blip = AddBlipForCoord(v.x, v.y, v.z)
-				SetBlipSprite (blip, Config.Shop.shopBlipID2)
-				SetBlipDisplay(blip, 4)
-				SetBlipScale  (blip, 1.0)
-				SetBlipAsShortRange(blip, true)
-				BeginTextCommandSetBlipName("STRING")
-				AddTextComponentString(Config.Shop.shopName)
-				EndTextCommandSetBlipName(blip)
-			end
+		local blip = AddBlipForCoord(v.x, v.y, v.z)
+			SetBlipSprite (blip, Config.Shop.shopBlipID2)
+			SetBlipDisplay(blip, 4)
+			SetBlipScale  (blip, 1.0)
+			SetBlipAsShortRange(blip, true)
+			BeginTextCommandSetBlipName("STRING")
+			AddTextComponentString(Config.Shop.shopName2)
+			EndTextCommandSetBlipName(blip)
+			showblip = true
 		end
+
 	end
 	
 end)
